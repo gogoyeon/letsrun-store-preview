@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="렛츠런파크 공식 상품 스토어" />
+  <title>주문·결제 | 말마프렌즈 온라인 스토어</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%230c3b2e' d='M8 54V10h48v44z'/%3E%3Cpath fill='%23f4a340' d='M18 43c4-20 24-28 29-14 2 7-3 16-14 17l-3-9c9-1 11-8 7-10-5-2-12 5-13 16z'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="style.css?v=20261102-banner-dismiss" />
+  <link rel="stylesheet" href="developer-policy.css?v=11" />
+<link rel="stylesheet" href="product-image.css?v=4"><link rel="stylesheet" href="empty-states.css?v=1"><link rel="stylesheet" href="store-discounts.css?v=20261102-discount-modes"></head>
+<body data-page="checkout">
+<div id="storeHeader"></div>
+<main id="store">
+<section id="checkoutPage" class="store-page"><a class="back-link" href="products.html">← 쇼핑 계속하기</a><p class="eyebrow">CHECKOUT</p><h1 tabindex="-1">주문·결제</h1><div class="checkout-layout"><div id="checkoutFields"><form id="checkoutForm"><h2>회원정보</h2><p class="required-guide"><span class="required-mark">*</span> 필수 입력 항목</p><label>이름 <span class="required-mark">*</span><input required name="name" autocomplete="name" placeholder="이름" /></label><label>전화번호 <span class="required-mark">*</span><input required name="phone" type="tel" autocomplete="tel" placeholder="010-0000-0000" /></label><div class="address-fields"><label for="postcode">주소 <span class="required-mark">*</span></label><div class="address-search-row"><input id="postcode" name="postcode" required inputmode="numeric" autocomplete="postal-code" placeholder="우편번호" aria-label="우편번호" /><button id="searchAddress" type="button" class="outline">주소 검색</button></div><input id="baseAddress" name="address" required autocomplete="address-line1" placeholder="기본주소를 입력하거나 검색해 주세요" aria-label="기본주소" /><label class="detail-address-label" for="detailAddress">상세주소 <span class="optional-mark">선택</span></label><input id="detailAddress" name="detailAddress" autocomplete="address-line2" placeholder="동·호수 등 상세주소" aria-label="상세주소" /><p id="addressStatus" role="status" class="address-status"></p></div><label>배송메모 <span class="optional-mark">선택</span><input name="request" placeholder="예: 문 앞에 놓아주세요" /></label><div id="checkoutDiscountArea"></div><div class="payment-note"><h3>구매 전 확인사항</h3><div id="purchaseNotices" class="purchase-notices"></div></div><div class="checkout-consents"><h3 class="checkout-consent-title">필수 동의</h3><label class="purchase-agreement"><input id="purchaseAgreement" name="purchaseAgreement" type="checkbox" required /><span>구매 전 확인사항을 확인하고 동의합니다. <strong>(필수)</strong></span></label><label class="purchase-agreement"><input id="privacyAgreement" name="privacyAgreement" type="checkbox" required /><span>주문 및 배송을 위한 개인정보 수집·이용에 동의합니다. <strong>(필수)</strong></span></label></div><button class="primary" disabled>결제하기</button></form></div><aside id="checkoutSummary" class="checkout-summary"></aside></div></section>
+</main>
+<div id="storeFooter"></div>
+<div id="addressModal" class="address-overlay" hidden><section class="address-modal" role="dialog" aria-modal="true" aria-labelledby="addressTitle"><div class="panel-head"><h2 id="addressTitle">주소 검색</h2><button type="button" class="close" id="closeAddress" aria-label="주소 검색 닫기">×</button></div><div id="addressSearchContainer"></div></section></div>
+<script src="https://t1.kakaocdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js" defer></script>
+<script src="empty-states.js"></script>
+<script src="store-layout.js?v=20261103-fixed-banner"></script>
+<script src="product-data.js?v=20261008-split"></script>
+<script src="inventory.js?v=20261008-account-label"></script>
+<script src="checkout-content.js?v=20261102-shipping-copy"></script>
+<script src="page-navigation.js?v=20261008-split"></script>
+<script src="order-demo-data.js?v=20261015-ui-states2"></script>
+<script src="store-common.js?v=20261103-fixed-banner"></script>
+<script src="goods-discounts.js?v=20261103-promo-qty"></script>
+<script src="checkout.js?v=20261103-promo-qty"></script>
+<script src="developer-policy.js?v=20261022-discount-spec"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>상품 품절 안내 | 말마프렌즈 온라인 스토어</title>
+  <link rel="stylesheet" href="style.css?v=20261102-banner-dismiss">
+  <link rel="stylesheet" href="payment-status.css">
+  <style>
+    .payment-result--soldout { min-height: 560px; }
+    .payment-result--soldout .payment-actions { grid-template-columns: 1fr; }
+    .payment-result--soldout .payment-secondary { display: inline-block; margin-top: 20px; color: #6b6b70; font-size: 14px; text-underline-offset: 4px; }
+    @media (max-width: 600px) { .payment-result--soldout { min-height: 480px; } }
+  </style>
+</head>
+<body data-page="payment-soldout">
+  <div id="storeHeader"></div>
+  <main id="store">
+    <section class="payment-result payment-result--soldout" aria-labelledby="paymentTitle">
+      <div class="payment-symbol" aria-hidden="true">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m7 14 17-8 17 8v21l-17 8-17-8V14Z"/><path d="m7 14 17 8 17-8M24 22v9M16 10l17 8"/><path d="M24 36v.1"/></svg>
+      </div>
+      <p class="eyebrow">OUT OF STOCK</p>
+      <h1 id="paymentTitle">상품이 품절되어<br>주문을 완료하지 못했습니다.</h1>
+      <p class="payment-description">결제 진행 중 재고가 소진되었습니다.<br>다른 상품을 확인해 주세요.</p>
+      <dl class="payment-details">
+        <div><dt>주문 상태</dt><dd><span class="payment-state">주문 미완료</span></dd></div>
+        <div id="cancellationRow" hidden><dt>결제 상태</dt><dd id="cancellationState"></dd></div>
+      </dl>
+      <div class="payment-actions"><a class="primary" href="products.html">상품 목록으로</a></div>
+      <a class="payment-secondary" href="orders.html">주문 내역 확인</a>
+    </section>
+  </main>
+  <div id="storeFooter"></div>
+  <script src="store-layout.js?v=20261103-fixed-banner"></script>
+  <script>
+    document.querySelector('.brand').href = 'products.html';
+    document.getElementById('ordersToggle').href = 'orders.html';
+    // UI preview only. Production must use the verified server payment state,
+    // never query parameters, to confirm cancellation. This page makes no payment requests.
+    const previewState = new URLSearchParams(location.search).get('preview');
+    const labels = { 'cancel-pending': '결제 취소 처리 중', 'cancelled': '결제가 취소되었습니다' };
+    if (labels[previewState]) {
+      document.getElementById('cancellationRow').hidden = false;
+      document.getElementById('cancellationState').textContent = labels[previewState];
+    }
+  </script>
+</body>
+</html>

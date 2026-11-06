@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>결제 확인 지연 | 말마프렌즈 온라인 스토어</title>
+  <link rel="stylesheet" href="style.css?v=20261102-banner-dismiss">
+  <link rel="stylesheet" href="payment-status.css?v=20261029-separated">
+</head>
+<body data-page="payment-delayed">
+  <div id="storeHeader"></div>
+  <main id="store">
+    <section class="payment-result payment-result--summary payment-result--delayed" aria-labelledby="paymentTitle">
+      <div class="payment-symbol" aria-hidden="true">
+        <svg viewBox="0 0 48 48" fill="none"><rect x="5" y="10" width="38" height="28" rx="6" stroke="currentColor" stroke-width="2.4"/><path d="M6 19h36M13 29h7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="36" cy="35" r="10" fill="#d85d36" stroke="#fff0e9" stroke-width="3"/><path d="M36 30v5m0 4v.1" stroke="white" stroke-width="2.4" stroke-linecap="round"/></svg>
+      </div>
+      <p class="eyebrow">PAYMENT</p>
+      <h1 id="paymentTitle">결제 확인이 늦어지고 있습니다.</h1>
+      <p class="payment-description">결제가 완료되면 주문 내역에 표시됩니다.<br>잠시 후 다시 확인해 주세요.</p>
+      <dl class="payment-details">
+        <div><dt>결제 상태</dt><dd><span class="payment-state" id="paymentState">결제 확인 중</span></dd></div>
+        <div id="paymentOrderRow" hidden><dt>주문번호</dt><dd id="paymentOrderNumber"></dd></div>
+      </dl>
+      <div class="payment-actions">
+        <a class="primary" id="recheckPayment" href="payment-checking.html">다시 확인</a>
+        <a class="outline" href="orders.html">주문 내역 확인</a>
+      </div>
+    </section>
+  </main>
+  <div id="storeFooter"></div>
+  <script src="store-layout.js?v=20261103-fixed-banner"></script>
+  <script>
+    // UI preview: open the checking screen without starting another payment.
+    // Production must query the payment status API and show its authoritative result.
+    document.querySelector('.brand').href = 'products.html';
+    document.getElementById('ordersToggle').href = 'orders.html';
+    const paymentOrderId = new URLSearchParams(location.search).get('id');
+    if (paymentOrderId && paymentOrderId.trim()) {
+      document.getElementById('paymentOrderNumber').textContent = paymentOrderId;
+      document.getElementById('paymentOrderRow').hidden = false;
+      document.getElementById('recheckPayment').href = 'payment-checking.html?id=' + encodeURIComponent(paymentOrderId);
+    }
+  </script>
+</body>
+</html>

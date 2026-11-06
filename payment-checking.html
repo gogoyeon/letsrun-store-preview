@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>결제 확인 중 | 말마프렌즈 온라인 스토어</title>
+  <link rel="stylesheet" href="style.css?v=20261102-banner-dismiss">
+  <link rel="stylesheet" href="payment-status.css">
+</head>
+<body data-page="payment-checking">
+  <div id="storeHeader"></div>
+  <main id="store">
+    <section class="payment-result payment-result--checking" aria-labelledby="paymentTitle">
+      <div class="payment-symbol" aria-hidden="true"><span class="payment-spinner"></span></div>
+      <p class="eyebrow">PAYMENT</p>
+      <div role="status" aria-live="polite" aria-atomic="true">
+        <h1 id="paymentTitle">결제를 확인하고 있습니다.</h1>
+        <p class="payment-description">잠시만 기다려 주세요.</p>
+      </div>
+      <dl class="payment-details">
+        <div><dt>결제 상태</dt><dd><span class="payment-state">결제 확인 중</span></dd></div>
+        <div id="paymentOrderRow" hidden><dt>주문번호</dt><dd id="paymentOrderNumber"></dd></div>
+      </dl>
+    </section>
+  </main>
+  <div id="storeFooter"></div>
+  <script src="store-layout.js?v=20261103-fixed-banner"></script>
+  <script>
+    // Static checking-state preview. Production must query the server and route
+    // to the completed or delayed view based on the authoritative payment result.
+    // Do not infer success or failure from elapsed time in this preview.
+    document.querySelector('.brand').href = 'products.html';
+    document.getElementById('ordersToggle').href = 'orders.html';
+    const paymentOrderId = new URLSearchParams(location.search).get('id');
+    if (paymentOrderId && paymentOrderId.trim()) {
+      document.getElementById('paymentOrderNumber').textContent = paymentOrderId;
+      document.getElementById('paymentOrderRow').hidden = false;
+    }
+  </script>
+</body>
+</html>

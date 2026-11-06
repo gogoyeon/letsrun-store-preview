@@ -1,0 +1,70 @@
+/* Merchandise offers use the existing store typography, colors and form controls. */
+.product-discounts{border-top:1px solid var(--line);padding:18px 0;margin-top:20px}
+.product-discounts h2,.checkout-discount h3{font-size:16px;margin:0 0 12px;letter-spacing:-.02em}
+.product-discount-row{padding:10px 0}
+.product-discount-row>div{display:flex;justify-content:space-between;gap:16px;align-items:baseline}
+.product-discount-row strong,.discount-savings{color:#387a30}
+.product-discounts p,.product-discount-row small,.discount-help{font-size:12px;color:var(--grey);line-height:1.7;margin:6px 0 0}
+.checkout-discount{border-bottom:1px solid var(--line);padding:24px 0}
+.checkout-discount select{width:100%;padding:12px;border:1px solid var(--line);border-radius:6px;background:white;color:var(--ink);font:inherit;font-size:14px}
+.checkout-discount select:focus-visible{outline:2px solid #438f39;outline-offset:2px}
+.discount-applied{margin-top:18px}
+.discount-applied-heading{display:flex;justify-content:space-between;gap:16px;font-size:14px;line-height:1.6}
+.discount-applied-heading strong{color:#387a30;white-space:nowrap}
+.discount-notice{font-size:13px;line-height:1.7;margin:8px 0;color:var(--ink)}
+.discount-allocation{list-style:none;padding:0;margin:12px 0 0;font-size:12px}
+.discount-allocation li{display:flex;justify-content:space-between;gap:12px;padding:6px 0;color:var(--grey)}
+.discount-allocation li span:last-child{white-space:nowrap}
+.cost-summary .discount-savings{font-weight:600}
+.discount-item-note{display:block;font-size:12px;color:#387a30;margin-top:6px;font-weight:400}
+@media(max-width:760px){.product-discount-row>div{flex-wrap:wrap;gap:4px 12px}.discount-applied-heading{flex-wrap:wrap;gap:4px}.discount-allocation li{align-items:baseline}}
+
+/* Same radio rows and selected quantity badge as letsrunpark-reser. */
+#checkoutDiscountArea .discount-options{min-width:0;display:grid;gap:8px;margin:26px 0;padding:0;border:0}
+#checkoutDiscountArea legend{padding:0;margin-bottom:12px;font-size:14px;font-weight:600}
+#checkoutDiscountArea .discount-check{display:flex;align-items:center;gap:8px;margin:0;padding:12px;border:1px solid var(--line);border-radius:8px;background:#fff;cursor:pointer;font-size:14px;font-weight:400}
+#checkoutDiscountArea .discount-check:has(input:checked){border-color:var(--ink)}
+#checkoutDiscountArea .discount-check input{width:16px;height:16px;flex:0 0 16px;margin:0;accent-color:var(--ink)}
+#checkoutDiscountArea .discount-option-copy{display:flex;flex:1;min-width:0;flex-direction:column;gap:4px}
+#checkoutDiscountArea .discount-option-copy strong{font-size:14px;font-weight:500;line-height:1.5}
+#checkoutDiscountArea .discount-option-notice{color:var(--grey);font-size:12px;line-height:1.5;word-break:keep-all}
+#checkoutDiscountArea .discount-limit-badge{display:none;flex-shrink:0;padding:5px 9px;border:1px solid #f3df89;border-radius:999px;background:#fff9da;color:var(--ink);font-size:12px;font-weight:600}
+#checkoutDiscountArea .discount-check:has(input:checked) .discount-limit-badge{display:inline-flex}
+@media(max-width:600px){#checkoutDiscountArea .discount-check{flex-wrap:wrap}#checkoutDiscountArea .discount-limit-badge{margin-left:24px}}
+
+.checkout-summary h2{margin-bottom:20px}
+.checkout-item.checkout-item-detail{display:block;padding:16px 0 20px}
+.checkout-product-heading{display:flex;align-items:baseline;justify-content:space-between;gap:16px}
+.checkout-product-heading a{font-size:16px;font-weight:600;text-decoration:none;line-height:1.5}
+.checkout-product-heading a:hover{text-decoration:underline}
+.checkout-product-heading span{font-size:14px;font-weight:400}
+.checkout-unit-price,.checkout-discount-condition{margin:6px 0 0;font-size:13px;line-height:1.6;color:var(--grey)}
+
+.order-item-discount{margin:8px 0;font-size:12px;line-height:1.7;color:#387a30;overflow-wrap:anywhere}
+.order-item-discount span,.order-item-discount strong{display:block}
+.order-item-discount strong{font-size:13px;font-weight:600}
+
+#checkoutDiscountArea .discount-account-limit{font-size:12px;color:var(--grey);font-weight:400;line-height:1.5}
+#checkoutDiscountArea .discount-check:has(input:disabled){color:var(--grey);background:var(--paper);cursor:default}
+@media(max-width:600px){#checkoutDiscountArea .discount-account-limit{margin-left:24px}}
+
+/* Promotion codes share the checkout discount typography and spacing. */
+#checkoutDiscountArea .promo-code-area{margin:0 0 4px;padding:4px 0 0 24px;border:0;min-width:0}
+#checkoutDiscountArea .promo-code-area h3{margin:0 0 12px;font-size:14px;font-weight:600;line-height:1.5}
+#checkoutDiscountArea .promo-code-entry{display:flex;align-items:stretch;gap:8px}
+#checkoutDiscountArea .promo-code-entry input{flex:1;min-width:0;width:0;margin:0;padding:11px 12px;border:1px solid var(--line);border-radius:8px}
+#checkoutDiscountArea .promo-code-entry button{flex:none;min-width:72px;margin:0;padding:10px 18px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);font-size:14px;font-weight:500}
+#checkoutDiscountArea .promo-code-entry button:hover{border-color:var(--ink)}
+#checkoutDiscountArea .promo-code-area .discount-help{margin:8px 0 0;color:var(--grey);font-size:12px;line-height:1.6}
+#checkoutDiscountArea .promo-code-success{display:flex;align-items:center;gap:12px;margin:12px 0 0;padding:12px;border:1px solid var(--ink);border-radius:8px;background:#fff;color:var(--ink)}
+#checkoutDiscountArea .promo-code-success button{flex:none;min-height:32px;padding:4px 0;border:0;background:none;color:var(--grey);font-size:12px;text-decoration:underline;text-underline-offset:3px}
+#promoCodeMessage{margin:8px 0 0;color:var(--grey);font-size:12px;line-height:1.6;overflow-wrap:anywhere}
+#promoCodeMessage:empty{display:none}
+#checkoutDiscountArea .promo-code-entry :focus-visible,#checkoutDiscountArea .promo-code-success button:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+@media(max-width:600px){#checkoutDiscountArea .promo-code-entry button{min-width:64px;padding:10px 14px}#checkoutDiscountArea .promo-code-success{flex-wrap:wrap}#checkoutDiscountArea .promo-code-success .discount-option-copy{flex-basis:calc(100% - 60px)}}
+
+#checkoutDiscountArea .promo-code-area[hidden]{display:none}
+
+#checkoutDiscountArea .general-discount-fields{display:grid;gap:8px;min-width:0;padding:4px 0 4px 24px}
+#checkoutDiscountArea .general-discount-fields[hidden]{display:none}
+#checkoutDiscountArea .general-discount-fields>.discount-help{margin:4px 0;color:var(--grey);font-size:12px;line-height:1.6}

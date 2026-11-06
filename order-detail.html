@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="렛츠런파크 공식 상품 스토어" />
+  <title>주문 상세 | 말마프렌즈 온라인 스토어</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%230c3b2e' d='M8 54V10h48v44z'/%3E%3Cpath fill='%23f4a340' d='M18 43c4-20 24-28 29-14 2 7-3 16-14 17l-3-9c9-1 11-8 7-10-5-2-12 5-13 16z'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="style.css?v=20261102-banner-dismiss" />
+  <link rel="stylesheet" href="developer-policy.css?v=11" />
+<link rel="stylesheet" href="product-image.css?v=4"><link rel="stylesheet" href="empty-states.css?v=1"><link rel="stylesheet" href="store-discounts.css?v=20261102-promo-ui"></head>
+<body data-page="order-detail">
+<div id="storeHeader"></div>
+<main id="store">
+<section id="orders" class="orders"><div class="section-head"><div><p class="eyebrow">MY ORDERS</p><h2>주문 상세</h2></div></div><div id="orderList" class="order-list"><p class="empty">아직 주문 내역이 없습니다.</p></div></section>
+</main>
+<div id="storeFooter"></div>
+<dialog id="returnDialog" class="return-dialog" aria-labelledby="returnTitle">
+    <form id="returnForm">
+      <button type="button" class="modal-close" data-close="returnDialog" aria-label="전체 반품 신청 닫기">×</button>
+      <p class="eyebrow">RETURN REQUEST</p>
+      <h2 id="returnTitle">전체 반품 신청</h2>
+      <p class="return-order-number" id="returnOrderNumber"></p>
+      <div class="return-notice"><strong>주문 상품 전체가 반품됩니다.</strong><span>일부 상품이나 일부 수량만 반품할 수 없습니다.</span></div>
+      <label>반품 사유 <span class="required-mark">*</span><select name="returnReason" required><option value="">선택해 주세요</option><option>단순 변심</option><option>상품 불량·파손</option><option>오배송</option><option>기타</option></select></label>
+      <label>상세 사유 <span class="required-mark">*</span><textarea name="returnDetail" rows="3" required placeholder="반품 사유를 자세히 입력해 주세요."></textarea></label>
+      <div class="return-shipping-guide"><strong>신청 후 상품을 직접 보내주세요.</strong><ol><li>반품 신청을 먼저 완료합니다.</li><li>안내된 반품 주소로 상품 전체를 <b>착불</b> 발송합니다.</li><li>발송 후 주문 상세에서 운송장 번호를 등록합니다.</li></ol></div>
+      <div class="return-cost-guide"><b>반품 배송비 안내</b><p>단순 변심은 최초 배송비와 반품 배송비가 환불금에서 차감될 수 있습니다. 상품 불량·파손 또는 오배송은 배송비를 차감하지 않습니다.</p></div>
+      <label class="return-agreement"><input type="checkbox" name="returnAgreement" required><span>전체 상품을 착불로 직접 반송하고, 발송 후 운송장 번호를 등록하겠습니다. <b>(필수)</b></span></label>
+      <p id="returnFormError" class="form-error" role="alert"></p>
+      <div class="return-dialog-actions"><button type="button" class="outline" data-close="returnDialog">닫기</button><button class="primary">전체 반품 신청</button></div>
+    </form>
+  </dialog><dialog id="returnTrackingDialog" class="return-dialog tracking-dialog" aria-labelledby="returnTrackingTitle">
+    <form id="returnTrackingForm">
+      <button type="button" class="modal-close" data-close="returnTrackingDialog" aria-label="반품 운송장 등록 닫기">×</button>
+      <p class="eyebrow">RETURN SHIPPING</p>
+      <h2 id="returnTrackingTitle">반품 운송장 등록</h2>
+      <p class="return-order-number" id="returnTrackingOrderNumber"></p>
+      <div class="return-notice"><strong>상품을 발송한 후 입력해 주세요.</strong><span>운송장 정보는 반품 상품 도착 확인에 사용됩니다.</span></div>
+      <div class="direct-return-fields"><label>택배사 <span class="required-mark">*</span><select name="returnCarrier" required><option value="">선택해 주세요</option><option>CJ대한통운</option><option>한진택배</option><option>롯데택배</option><option>우체국택배</option><option>로젠택배</option><option>경동택배</option><option>대신택배</option><option>일양로지스</option><option>천일택배</option><option>합동택배</option><option>CU 편의점택배</option><option>GS Postbox</option><option>DHL</option><option>FedEx</option><option>UPS</option><option>기타 택배사</option></select></label><label>반품 운송장 번호 <span class="required-mark">*</span><input name="returnTrackingNumber" required inputmode="text" placeholder="운송장번호를 입력해주세요"></label></div>
+      <p id="returnTrackingFormError" class="form-error" role="alert"></p>
+      <div class="return-dialog-actions"><button type="button" class="outline" data-close="returnTrackingDialog">닫기</button><button class="primary">운송장 등록</button></div>
+    </form>
+  </dialog>
+<script src="empty-states.js"></script>
+<script src="store-layout.js?v=20261103-fixed-banner"></script>
+<script src="product-data.js?v=20261008-split"></script>
+<script src="inventory.js?v=20261008-account-label"></script>
+<script src="checkout-content.js?v=20261102-shipping-copy"></script>
+<script src="page-navigation.js?v=20261008-split"></script>
+<script src="order-demo-data.js?v=20261015-ui-states2"></script>
+<script src="store-common.js?v=20261103-fixed-banner"></script>
+<script src="orders-common.js?v=20261008-split"></script>
+<script src="order-detail.js?v=20261022-discount-breakdown"></script>
+<script src="developer-policy.js?v=20261022-discount-spec"></script>
+</body>
+</html>
